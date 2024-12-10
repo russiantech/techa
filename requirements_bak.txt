@@ -2,6 +2,7 @@ alembic
 amqp
 annotated-types
 anyio
+authlib
 jsonschema
 bcrypt
 billiard
@@ -32,7 +33,6 @@ Flask-Login
 Flask-Mail
 Flask-Migrate
 Flask-Moment
-Flask-OAuthlib
 Flask-Session
 Flask-SQLAlchemy
 Flask-WTF
