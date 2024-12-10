@@ -81,7 +81,7 @@ class TestingConfig(Config):
 
 class ProductionConfig(Config):
     TESTING = False
-    DEBUG = False
+    DEBUG = True
     FLASK_ENV = 'production'
     
     # Mail configuration

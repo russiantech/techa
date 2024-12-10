@@ -1,3 +1,4 @@
+alembic==1.14.0
 amqp==5.3.1
 annotated-types==0.7.0
 anyio==4.7.0
@@ -40,7 +41,6 @@ fonttools==4.55.2
 google-auth==2.36.0
 google-auth-oauthlib==1.2.1
 greenlet==3.1.1
-gunicorn==23.0.0
 h11==0.14.0
 html5lib==1.1
 idna==3.10
@@ -57,6 +57,7 @@ msgspec==0.18.6
 mysql-connector-python==9.1.0
 numpy==2.2.0
 oauthlib==3.2.2
+opencv-python==4.10.0.84
 packaging==24.2
 pandas==2.2.3
 pathlib==1.0.1
