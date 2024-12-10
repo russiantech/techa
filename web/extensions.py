@@ -19,7 +19,6 @@ moment = Moment()
 oauth = OAuth()
 csrf = CSRFProtect()
 
-
 def config_app(app, config_name):
     """Configure app settings based on environment."""
     from web.config import app_config
@@ -54,8 +53,8 @@ def make_available():
             Techa m-powers people & powers businesses to stay relevant with technologies and advancements.',
         'app_location': 'Graceland Estate, Lekki, Lagos, Nigeria.',
         'app_email': 'hi@techa.tech',
-        'app_logo': getenv('logo_url'),
-        'site_logo': getenv('logo_url'),
+        'app_logo': getenv('LOGO_URL'),
+        'site_logo': getenv('LOGO_URL'),
         'site_link': 'https://www.techa.tech',
         'whatsapp_link': 'https://www.techa.tech',
         'terms_link': 'https://www.techa.tech/terms',
