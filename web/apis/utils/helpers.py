@@ -78,3 +78,39 @@ def strtobool_custom(value):
         return False
     else:
         raise ValueError(f"Invalid boolean string: {value}")
+
+
+# Helper function to handle email verification
+def handle_verify_email(user):
+    try:
+        if user.verified:
+            return success_response(f'Your email address, {user.username}, is already verified.')
+        user.verified = True
+        db.session.commit()
+        return success_response(f'Email address confirmed for {user.username}.')
+    except Exception as e:
+        return error_response(f"{e}")
+
+# Helper function to handle password reset
+# from flask_expects_json import expects_json
+# @expects_json(reset_password_schema)
+def handle_reset_password(user):
+    try:
+        data = request.get_json()
+        
+        try:
+            validate(instance=data, schema=reset_password_schema)
+        except ValidationError as e:
+            return error_response(f"Validation error: {e.message}")
+        
+        new_password = data["password"]
+        
+        user.set_password(new_password)
+        db.session.commit()
+        
+        return success_response(f'Your password has been updated for {user.username}. successfully.')
+    
+    except ValueError as e:
+        return error_response(f"{str(e)}")
+    except Exception as e:
+        return error_response(f"{str(e)}")

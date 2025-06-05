@@ -39,12 +39,21 @@ def init_ext(app):
 def make_available():
     """Provide application metadata."""
     products_links = {
-        'salesnet_link': 'salenset.techa.tech',
-        'barman_link': 'barman.techa.tech',
-        'paysafe_link': 'paysafe.techa.tech',
-        'intellect_link': 'intellect.techa.tech',
-        'workforce_link': 'workforce.techa.tech'
+        'salesnet_link_API': 'https://orange-water-477324.postman.co/workspace/Russian-developers-(Salesnet-AP~ef1161fe-1bef-4d33-b182-53abb26abd96/collection/31696103-d99bfcc3-3fa8-4260-af31-4ea001460562',
+        'salesnet_link': 'https://salesnet-f.vercel.app/',
+        'barman_link': 'https://barman-hh4c.onrender.com/',
+        'paysafe_link': '#',
+        'intellect_link': 'https://intellect-pkqg.onrender.com/',
+        'workforce_link': 'https://trainee.dunistech.ng/',
+        
     }
+    
+    other_links = {
+        'simplylovely_link': 'https://simplylovely.ng/',
+        'dunistech_link': 'https://dunistech.ng/',
+        'cheerypay_link': 'https://cheerypay.com/',
+    }
+    
     app_data = {
         'app_name': 'Techa',
         'hype': 'Your Digital Learning Companion.',
@@ -69,5 +78,5 @@ def make_available():
     }
 
     # Combine app_data and products_links
-    datas = {**app_data, **products_links}
+    datas = {**app_data, **products_links, **other_links}
     return datas

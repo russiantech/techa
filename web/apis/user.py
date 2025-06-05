@@ -1,30 +1,38 @@
 from datetime import datetime
 from os import getenv
+# oauth implimentations
+import secrets, requests
+from requests.exceptions import ConnectionError, Timeout, RequestException
+from urllib.parse import urlencode
+
 from flask import abort, current_app, session, jsonify, render_template, url_for, flash, redirect, request, Blueprint
 from flask_login import login_user, current_user, logout_user, login_required
 
 import sqlalchemy as sa, traceback
 from jsonschema import validate, ValidationError
-from web.models import db, bcrypt
+
+from web.models import (
+    db, bcrypt, Transaction, User, Notification, AccountDetail
+)
+
+from web.extensions import csrf
+
 from web.apis.utils.valid_schemas import (
     signin_schema, signup_schema, request_schema, update_user_schema, reset_password_schema, 
     reset_password_email_schema, validTokenSchema
 )
-from web.apis.utils.helpers import ( error_response, success_response, user_ip )
 
-from web.models import Transaction, User, Notification, AccountDetail
+from web.apis.utils.helpers import ( 
+    error_response, success_response, user_ip, handle_verify_email, handle_reset_password
+    )
+
 from sqlalchemy.orm import joinedload
 
-from web.apis.utils import uploader, email as emailer
+from web.apis.utils.uploader import uploader
+# from web.apis.utils.email import email as emailer
+from web.apis.utils import email as emailer
 from web.apis.utils.decorators import admin_or_current_user, role_required
 from web.apis.utils.oauth_providers import oauth2providers
-
-from web.extensions import csrf
-
-# oauth implimentations
-import secrets, requests
-from requests.exceptions import ConnectionError, Timeout, RequestException
-from urllib.parse import urlencode
 
 user_bp = Blueprint('user', __name__)
 
@@ -296,41 +304,6 @@ def process_token(token: str, email: str):
     
     except Exception as e:
         return error_response(str(e))
-
-# Helper function to handle email verification
-def handle_verify_email(user):
-    try:
-        if user.verified:
-            return success_response(f'Your email address, {user.username}, is already verified.')
-        user.verified = True
-        db.session.commit()
-        return success_response(f'Email address confirmed for {user.username}.')
-    except Exception as e:
-        return error_response(f"{e}")
-
-# Helper function to handle password reset
-# from flask_expects_json import expects_json
-# @expects_json(reset_password_schema)
-def handle_reset_password(user):
-    try:
-        data = request.get_json()
-        
-        try:
-            validate(instance=data, schema=reset_password_schema)
-        except ValidationError as e:
-            return error_response(f"Validation error: {e.message}")
-        
-        new_password = data["password"]
-        
-        user.set_password(new_password)
-        db.session.commit()
-        
-        return success_response(f'Your password has been updated for {user.username}. successfully.')
-    
-    except ValueError as e:
-        return error_response(f"{str(e)}")
-    except Exception as e:
-        return error_response(f"{str(e)}")
 
 # ===============================================================
 

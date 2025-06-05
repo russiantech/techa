@@ -413,7 +413,7 @@
 			</div>
 		</section>
 
-		<section class="pt-24 pt-lg-40">
+		{#<section class="pt-24 pt-lg-40">
 			<div class="container-xxl max-w-screen-xl">
 				<div class="row align-items-center mb-10">
 					<div class="col-lg-7">
@@ -427,7 +427,7 @@
 					</div>
 				</div>
 				<div id="showcase" class="hstack scrollable-x gap-4">
-					<a href="#"
+					<button data-tab="tech"
 						class="btn btn-sm bg-secondary bg-opacity-20 bg-opacity-40-hover text-heading text-opacity-80 text-opacity-100-hover font-bold rounded-pill">
 						<i class="fas fa-image me-2"></i>
 						Dashboard
@@ -436,6 +436,11 @@
 						class="btn btn-sm bg-secondary bg-opacity-20 bg-opacity-40-hover text-heading text-opacity-80 text-opacity-100-hover font-bold rounded-pill">
 						<i class="fas fa-image me-2"></i>
 						Banking & Fintech
+					</a>
+					<a href="#"
+						class="btn btn-sm bg-secondary bg-opacity-20 bg-opacity-40-hover text-heading text-opacity-80 text-opacity-100-hover font-bold rounded-pill">
+						<i class="fas fa-image me-2"></i>
+						Sales Pages
 					</a>
 					<a href="#"
 						class="btn btn-sm bg-secondary bg-opacity-20 bg-opacity-40-hover text-heading text-opacity-80 text-opacity-100-hover font-bold rounded-pill">
@@ -456,7 +461,7 @@
 								style="width: 1000px;">
 								<div class="screens-showcase d-flex mb-6 mb-lg-12 animation-move-slow-left">
 									<div class="col-10 col-md-7 px-3 px-lg-6">
-										<a href="intellect.techa.tech">
+										<a href="{{intellect_link}}">
 											<img src="static/showcase/img/products/intellect.png"
 												class="img-fluid rounded-4 transform  scale-105-hover"
 												alt="Your digital learning Companion" />
@@ -534,7 +539,108 @@
 				</div>
 			</div>
 			</div>
+		</section>#}
+		
+		<section class="pt-24 pt-lg-40">
+		<div class="container-xxl max-w-screen-xl">
+		<div class="row align-items-center mb-10">
+			<div class="col-lg-7">
+				<h1 class="lh-tight ls-tighter font-bolder display-5 mb-5">
+					Recent products showcase
+				</h1>
+				<p class="text-lg pe-lg-24">
+					Techa aims to support designers and developers build fully responsive & outstanding
+					websites and apps.
+				</p>
+			</div>
+		</div>
+
+		<!-- Corrected Tab Navigation -->
+		<div id="showcase" class="hstack scrollable-x gap-4">
+			<button data-tab="tech" class="btn btn-sm bg-secondary bg-opacity-20 bg-opacity-40-hover text-heading text-opacity-80 text-opacity-100-hover font-bold rounded-pill">
+				<i class="fas fa-tachometer-alt me-2"></i>
+				Dashboard
+			</button>
+			<button data-tab="banking" class="btn btn-sm bg-secondary bg-opacity-20 bg-opacity-40-hover text-heading text-opacity-80 text-opacity-100-hover font-bold rounded-pill">
+				<i class="fas fa-university me-2"></i>
+				Banking & Fintech
+			</button>
+			<button data-tab="sales" class="btn btn-sm bg-secondary bg-opacity-20 bg-opacity-40-hover text-heading text-opacity-80 text-opacity-100-hover font-bold rounded-pill">
+				<i class="fas fa-chart-line me-2"></i>
+				Sales Pages
+			</button>
+			<button data-tab="management" class="btn btn-sm bg-secondary bg-opacity-20 bg-opacity-40-hover text-heading text-opacity-80 text-opacity-100-hover font-bold rounded-pill">
+				<i class="fas fa-tools me-2"></i>
+				Management Tools
+			</button>
+			<button data-tab="landing" class="btn btn-sm bg-secondary bg-opacity-20 bg-opacity-40-hover text-heading text-opacity-80 text-opacity-100-hover font-bold rounded-pill">
+				<i class="fas fa-window-maximize me-2"></i>
+				Landing Pages
+			</button>
+		</div>
+
+		<!-- Image Showcase (unchanged) -->
+		<div class="row mt-8">
+			<div class="col-lg-12 mx-auto">
+				<div class="screens-showcase-container position-relative rounded-5 gradient-bottom-right start-purple-500 overflow-hidden h-lg-calc" style="--x-h-lg: 200px;">
+					<div class="w-full h-full p-6 p-lg-0 transform translate-x-n1/2 translate-y-lg-n1/2 rotate-lg-30" style="width: 1000px;">
+						<div class="screens-showcase d-flex mb-6 mb-lg-12 animation-move-slow-left">
+							<div class="col-10 col-md-7 px-3 px-lg-6">
+								<a href="{{intellect_link}}">
+									<img src="static/showcase/img/products/intellect.png" class="img-fluid rounded-4 transform scale-105-hover" alt="Your digital learning Companion" />
+								</a>
+							</div>
+							<div class="col-10 col-md-7 px-3 px-lg-6">
+								<a href="{{barman_link}}">
+									<img src="static/showcase/img/products/barman.png" class="img-fluid rounded-4 transform scale-100 scale-105-hover transition duration-base ease-in" alt="Barman" />
+								</a>
+							</div>
+							<div class="col-10 col-md-7 px-3 px-lg-6">
+								<a href="intellect.techa.tech">
+									<img src="static/showcase/img/products/intellect.png" class="img-fluid rounded-4 transform scale-105-hover" alt="Your digital learning Companion" />
+								</a>
+							</div>
+							<div class="col-10 col-md-7 px-3 px-lg-6">
+								<a href="{{salesnet_link}}">
+									<img src="static/showcase/img/products/salesnet.png" class="img-fluid rounded-4 transform scale-100 scale-105-hover transition duration-base ease-in" alt="Precision in profits, inventory & insights for growth" />
+								</a>
+							</div>
+							<div class="col-10 col-md-7 px-3 px-lg-6">
+								<a href="{{barman_link}}">
+									<img src="static/showcase/img/products/barman_0.png" class="img-fluid rounded-4 transform scale-100 scale-105-hover transition duration-base ease-in" alt="Precision in profits, inventory & insights for growth" />
+								</a>
+							</div>
+						</div>
+
+						<div class="screens-showcase d-flex animation-move-slow-right">
+							<div class="col-10 col-md-7 px-3 px-lg-6">
+								<a href="{{salesnet_link}}">
+									<img src="static/showcase/img/products/salesnet.png" class="img-fluid rounded-4 transform scale-100 scale-105-hover transition duration-base ease-in" alt="Precision in profits, inventory & insights for growth" />
+								</a>
+							</div>
+							<div class="col-10 col-md-7 px-3 px-lg-6">
+								<a href="{{barman_link}}">
+									<img src="static/showcase/img/products/barman.png" class="img-fluid rounded-4 transform scale-100 scale-105-hover transition duration-base ease-in" alt="Precision in profits, inventory & insights for growth" />
+								</a>
+							</div>
+							<div class="col-10 col-md-7 px-3 px-lg-6">
+								<a href="{{salesnet_link}}">
+									<img src="static/showcase/img/products/salesnet.png" class="img-fluid rounded-4 transform scale-100 scale-105-hover transition duration-base ease-in" alt="Precision in profits, inventory & insights for growth" />
+								</a>
+							</div>
+							<div class="col-10 col-md-7 px-3 px-lg-6">
+								<a href="intellect.techa.tech">
+									<img src="static/showcase/img/products/intellect.png" class="img-fluid rounded-4 transform scale-105-hover" alt="Your digital learning Companion" />
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
 		</section>
+		<!-- - -->
 
 		<section class="py-16 py-md-24 pt-lg-32 pb-lg-16 position-relative">
 			<div class="container-xxl max-w-screen-xl">
