@@ -40,11 +40,11 @@ def make_available():
     """Provide application metadata."""
     products_links = {
         'salesnet_link_API': 'https://orange-water-477324.postman.co/workspace/Russian-developers-(Salesnet-AP~ef1161fe-1bef-4d33-b182-53abb26abd96/collection/31696103-d99bfcc3-3fa8-4260-af31-4ea001460562',
-        'salesnet_link': 'https://salesnet-f.vercel.app/',
+        'salesnet_link': 'https://salesnet.ng',
         'barman_link': 'https://barman-hh4c.onrender.com/',
         'paysafe_link': '#',
         'intellect_link': 'https://intellect-pkqg.onrender.com/',
-        'workforce_link': 'https://trainee.dunistech.ng/',
+        'workforce_link': 'https://trainee.dunistech.ng',
         
     }
     
